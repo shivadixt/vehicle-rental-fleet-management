@@ -6,10 +6,10 @@ Basic front-end version (HTML + CSS only) — about 30% of the project. Static p
 
 | Member | HTML file | CSS file |
 |---|---|---|
-| Member 1 (Lead) | index.html | css/home.css (+ owns css/common.css) |
-| Member 2 | vehicles.html | css/vehicles.css |
-| Member 3 | booking.html | css/booking.css |
-| Member 4 | fleet.html | css/fleet.css |
+| Shiva (Lead) | index.html | css/home.css (+ owns css/common.css) |
+| Saurabh | vehicles.html | css/vehicles.css |
+| Shivansh | booking.html | css/booking.css |
+| Shashank | fleet.html | css/fleet.css |
 
 `css/common.css` (navbar, footer, buttons, base layout) is shared and used by every page — only the Lead edits it, so nobody's commits collide.
 
