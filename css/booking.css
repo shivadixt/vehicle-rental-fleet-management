@@ -1,0 +1,27 @@
+/* Booking page (booking.html) styles - Owner: Member 3 */
+
+.booking-form {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    max-width: 500px;
+}
+
+.booking-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.booking-form button {
+    margin-top: 20px;
+}
