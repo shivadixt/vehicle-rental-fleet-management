@@ -55,22 +55,3 @@
     line-height: 1.5;
 }
 
-/* Mobile wrap */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .navbar ul {
-        gap: 8px;
-    }
-
-    .hero {
-        padding: 35px 15px;
-    }
-
-    .hero h1 {
-        font-size: 22px;
-    }
-}
