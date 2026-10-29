@@ -1,0 +1,34 @@
+/* Vehicles page (vehicles.html) styles - Owner: Member 2 */
+
+.vehicle-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vehicle-card {
+    background: white;
+    border: 1px solid #ddd;
+    width: 260px;
+    padding: 15px;
+}
+
+.vehicle-card h3 {
+    margin-bottom: 5px;
+}
+
+.vehicle-card .price {
+    color: #1e3a5f;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.status-available {
+    color: green;
+    font-weight: bold;
+}
+
+.status-rented {
+    color: red;
+    font-weight: bold;
+}
