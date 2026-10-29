@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Vehicle</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">VRFMS</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vehicles.html">Vehicles</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="fleet.html">Fleet Management</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Book a Vehicle</h1>
+        <p>Fill this form to request a booking. Right now it does not save anywhere, this will be connected to the backend later.</p>
+
+        <form class="booking-form" action="#" method="post">
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="vehicle">Select Vehicle</label>
+            <select id="vehicle" name="vehicle">
+                <option value="swift">Maruti Swift - Car</option>
+                <option value="creta">Hyundai Creta - SUV</option>
+                <option value="re-classic">Royal Enfield Classic - Bike</option>
+                <option value="bolero">Mahindra Bolero - Van</option>
+            </select>
+
+            <label for="pickup-date">Pickup Date</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+
+            <label for="return-date">Return Date</label>
+            <input type="date" id="return-date" name="return-date" required>
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
+    </footer>
+
+</body>
+</html>

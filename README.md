@@ -11,7 +11,7 @@ Basic front-end version (HTML + CSS only) — about 30% of the project. Static p
 | Shivansh | booking.html | css/booking.css |
 | Shashank | fleet.html | css/fleet.css |
 
-`css/common.css` (navbar, footer, buttons, base layout) is shared and used by every page — only the Lead edits it, so nobody's commits collide.
+`css/common.css` (navbar, footer, buttons, base layout) is shared and used by every page.
 
 ## Branch structure
 
