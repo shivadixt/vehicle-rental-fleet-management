@@ -1,27 +1,74 @@
-/* Booking page (booking.html) styles - Owner: Member 3 */
+
 
 .booking-form {
-    background: white;
+    background: #ffffff;
     padding: 25px;
-    border: 1px solid #ddd;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     max-width: 500px;
+    margin: 25px auto;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
 }
+
 
 .booking-form label {
     display: block;
     margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #24324a;
 }
 
+/* Input Fields */
 .booking-form input,
 .booking-form select {
+    box-sizing: border-box;
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #f8fafc;
+    font-size: 14px;
+    transition: 0.2s ease;
 }
 
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Confirm Booking Button */
 .booking-form button {
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.booking-form button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+
+@media (max-width: 600px) {
+    .booking-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px;
+        box-sizing: border-box;
+    }
 }
