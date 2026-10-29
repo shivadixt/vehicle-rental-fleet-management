@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,35 @@
     <div class="container">
         <h1>Available Vehicles</h1>
         <p>These are sample vehicles for now. Later this list will come from a database.</p>
+
+        <!-- Feature 1: Search Vehicle -->
+        <div class="vehicle-search">
+            <label for="search">Search Vehicle:</label>
+            <input type="search" id="search"
+                   placeholder="Enter vehicle name">
+        </div>
+
+        <!-- Feature 2: Filter by Vehicle Type -->
+        <div class="vehicle-filter">
+            <label for="vehicleType">Filter by Type:</label>
+            <select id="vehicleType">
+                <option value="all">All Vehicles</option>
+                <option value="car">Car</option>
+                <option value="suv">SUV</option>
+                <option value="bike">Bike</option>
+                <option value="van">Van</option>
+            </select>
+        </div>
+
+        <!-- Feature 3: Filter by Availability -->
+        <div class="availability-filter">
+            <label for="availability">Availability:</label>
+            <select id="availability">
+                <option value="all">All Vehicles</option>
+                <option value="available">Available</option>
+                <option value="rented">Rented</option>
+            </select>
+        </div>
 
         <div class="vehicle-grid">
 
@@ -66,3 +96,4 @@
 
 </body>
 </html>
+
