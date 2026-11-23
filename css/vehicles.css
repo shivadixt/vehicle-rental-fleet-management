@@ -1,5 +1,6 @@
 /* Vehicles page (vehicles.html) styles - Owner: Member 2 */
 
+
 .vehicle-grid {
     display: flex;
     flex-wrap: wrap;
@@ -32,3 +33,33 @@
     color: red;
     font-weight: bold;
 }
+
+/* Search and Filter Features */
+
+.vehicle-search,
+.vehicle-filter,
+.availability-filter {
+    margin: 15px 0;
+}
+
+.vehicle-search label,
+.vehicle-filter label,
+.availability-filter label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.vehicle-search input,
+.vehicle-filter select,
+.availability-filter select {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#vehicleCount {
+    margin: 10px 0;
+}
+

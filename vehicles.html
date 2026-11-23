@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,35 @@
     <div class="container">
         <h1>Available Vehicles</h1>
         <p>These are sample vehicles for now. Later this list will come from a database.</p>
+
+        <!-- Feature 1: Search Vehicle -->
+        <div class="vehicle-search">
+            <label for="search">Search Vehicle:</label>
+            <input type="search" id="search"
+                   placeholder="Enter vehicle name">
+        </div>
+
+        <!-- Feature 2: Filter by Vehicle Type -->
+        <div class="vehicle-filter">
+            <label for="vehicleType">Filter by Type:</label>
+            <select id="vehicleType">
+                <option value="all">All Vehicles</option>
+                <option value="car">Car</option>
+                <option value="suv">SUV</option>
+                <option value="bike">Bike</option>
+                <option value="van">Van</option>
+            </select>
+        </div>
+
+        <!-- Feature 3: Filter by Availability -->
+        <div class="availability-filter">
+            <label for="availability">Availability:</label>
+            <select id="availability">
+                <option value="all">All Vehicles</option>
+                <option value="available">Available</option>
+                <option value="rented">Rented</option>
+            </select>
+        </div>
 
         <div class="vehicle-grid">
 
@@ -64,5 +94,87 @@
         <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
     </footer>
 
+    <!-- JavaScript: Search and Filter Functionality -->
+    <script>
+
+        // Get search and filter elements
+        const searchInput = document.getElementById("search");
+        const vehicleType = document.getElementById("vehicleType");
+        const availability = document.getElementById("availability");
+
+        // Get all vehicle cards
+        const vehicleCards = document.querySelectorAll(".vehicle-card");
+
+        // Function to search and filter vehicles
+        function filterVehicles() {
+
+            // Get input values
+            const searchValue = searchInput.value.toLowerCase().trim();
+            const selectedType = vehicleType.value.toLowerCase();
+            const selectedAvailability = availability.value.toLowerCase();
+
+            // Loop through each vehicle card
+            vehicleCards.forEach(function(card) {
+
+                // Get vehicle name
+                const vehicleName = card.querySelector("h3")
+                    .textContent.toLowerCase();
+
+                // Get vehicle type
+                const typeText = card.querySelector("p")
+                    .textContent.replace("Type:", "")
+                    .trim()
+                    .toLowerCase();
+
+                // Get vehicle availability
+                const statusElement = card.querySelector(
+                    ".status-available, .status-rented"
+                );
+
+                const statusText = statusElement.textContent
+                    .trim()
+                    .toLowerCase();
+
+                // Search by vehicle name
+                const matchesSearch = vehicleName.includes(searchValue);
+
+                // Filter by vehicle type
+                const matchesType =
+                    selectedType === "all" ||
+                    typeText === selectedType;
+
+                // Filter by availability
+                const matchesAvailability =
+                    selectedAvailability === "all" ||
+                    statusText === selectedAvailability;
+
+                // Display matching vehicle cards
+                if (
+                    matchesSearch &&
+                    matchesType &&
+                    matchesAvailability
+                ) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+        }
+
+        // Search event
+        searchInput.addEventListener("input", filterVehicles);
+
+        // Vehicle type filter event
+        vehicleType.addEventListener("change", filterVehicles);
+
+        // Availability filter event
+        availability.addEventListener("change", filterVehicles);
+
+    </script>
+
 </body>
 </html>
+
+
