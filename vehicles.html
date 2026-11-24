@@ -1,180 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Available Vehicles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Vehicles - VRFMS</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/vehicles.css">
 </head>
 <body>
+    <div class="whole">
+        <nav class="navbar">
+            <div class="logo">VRFMS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vehicles.html" class="active">Vehicles</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="fleet.html">Fleet Management</a></li>
+            </ul>
+        </nav>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">VRFMS</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vehicles.html">Vehicles</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-            <li><a href="fleet.html">Fleet Management</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1>Available Vehicles</h1>
-        <p>These are sample vehicles for now. Later this list will come from a database.</p>
-
-        <!-- Feature 1: Search Vehicle -->
-        <div class="vehicle-search">
-            <label for="search">Search Vehicle:</label>
-            <input type="search" id="search"
-                   placeholder="Enter vehicle name">
-        </div>
-
-        <!-- Feature 2: Filter by Vehicle Type -->
-        <div class="vehicle-filter">
-            <label for="vehicleType">Filter by Type:</label>
-            <select id="vehicleType">
-                <option value="all">All Vehicles</option>
-                <option value="car">Car</option>
-                <option value="suv">SUV</option>
-                <option value="bike">Bike</option>
-                <option value="van">Van</option>
-            </select>
-        </div>
-
-        <!-- Feature 3: Filter by Availability -->
-        <div class="availability-filter">
-            <label for="availability">Availability:</label>
-            <select id="availability">
-                <option value="all">All Vehicles</option>
-                <option value="available">Available</option>
-                <option value="rented">Rented</option>
-            </select>
-        </div>
-
-        <div class="vehicle-grid">
-
-            <div class="vehicle-card">
-                <h3>Maruti Swift</h3>
-                <p>Type: Car</p>
-                <p class="price">Rs. 1200 / day</p>
-                <p class="status-available">Available</p>
-                <a href="booking.html" class="btn">Book This</a>
+        <div class="container">
+            <div class="page-header">
+                <h1>Available Vehicles</h1>
+                <p>Browse our selection of cars, SUVs, bikes, and vans ready for rent.</p>
             </div>
 
-            <div class="vehicle-card">
-                <h3>Hyundai Creta</h3>
-                <p>Type: SUV</p>
-                <p class="price">Rs. 2200 / day</p>
-                <p class="status-rented">Rented</p>
-                <a href="booking.html" class="btn">Book This</a>
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="search">Search Vehicle</label>
+                    <input type="search" id="search" placeholder="Search by vehicle name">
+                </div>
+
+                <div class="filter-group">
+                    <label for="vehicleType">Filter by Type</label>
+                    <select id="vehicleType">
+                        <option value="all">All Types</option>
+                        <option value="car">Car</option>
+                        <option value="suv">SUV</option>
+                        <option value="bike">Bike</option>
+                        <option value="van">Van</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability">
+                        <option value="all">All Statuses</option>
+                        <option value="available">Available</option>
+                        <option value="rented">Rented</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="vehicle-card">
-                <h3>Royal Enfield Classic</h3>
-                <p>Type: Bike</p>
-                <p class="price">Rs. 700 / day</p>
-                <p class="status-available">Available</p>
-                <a href="booking.html" class="btn">Book This</a>
-            </div>
+            <p id="vehicleCount" class="vehicle-stats">Showing 4 vehicles</p>
 
-            <div class="vehicle-card">
-                <h3>Mahindra Bolero</h3>
-                <p>Type: Van</p>
-                <p class="price">Rs. 1800 / day</p>
-                <p class="status-available">Available</p>
-                <a href="booking.html" class="btn">Book This</a>
-            </div>
+            <div class="vehicle-grid">
+                <div class="vehicle-card" data-name="maruti swift" data-type="car" data-status="available">
+                    <div class="card-top">
+                        <h3>Maruti Swift</h3>
+                        <span class="vehicle-type-tag">Car</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="price">Rs. 1,200 <span>/ day</span></div>
+                        <span class="status-available">Available</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="booking.html" class="btn">Book This</a>
+                    </div>
+                </div>
 
+                <div class="vehicle-card" data-name="hyundai creta" data-type="suv" data-status="rented">
+                    <div class="card-top">
+                        <h3>Hyundai Creta</h3>
+                        <span class="vehicle-type-tag">SUV</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="price">Rs. 2,200 <span>/ day</span></div>
+                        <span class="status-rented">Rented</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="booking.html" class="btn">Book This</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-name="royal enfield classic" data-type="bike" data-status="available">
+                    <div class="card-top">
+                        <h3>Royal Enfield Classic</h3>
+                        <span class="vehicle-type-tag">Bike</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="price">Rs. 700 <span>/ day</span></div>
+                        <span class="status-available">Available</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="booking.html" class="btn">Book This</a>
+                    </div>
+                </div>
+
+                <div class="vehicle-card" data-name="mahindra bolero" data-type="van" data-status="available">
+                    <div class="card-top">
+                        <h3>Mahindra Bolero</h3>
+                        <span class="vehicle-type-tag">Van</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="price">Rs. 1,800 <span>/ day</span></div>
+                        <span class="status-available">Available</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="booking.html" class="btn">Book This</a>
+                    </div>
+                </div>
+
+                <div id="noResults" class="no-results">
+                    No vehicles match your search and filter criteria.
+                </div>
+            </div>
         </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
+        </footer>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
-    </footer>
-
-    <!-- JavaScript: Search and Filter Functionality -->
     <script>
-
-        // Get search and filter elements
         const searchInput = document.getElementById("search");
         const vehicleType = document.getElementById("vehicleType");
         const availability = document.getElementById("availability");
-
-        // Get all vehicle cards
         const vehicleCards = document.querySelectorAll(".vehicle-card");
+        const vehicleCount = document.getElementById("vehicleCount");
+        const noResults = document.getElementById("noResults");
 
-        // Function to search and filter vehicles
         function filterVehicles() {
-
-            // Get input values
             const searchValue = searchInput.value.toLowerCase().trim();
             const selectedType = vehicleType.value.toLowerCase();
             const selectedAvailability = availability.value.toLowerCase();
 
-            // Loop through each vehicle card
-            vehicleCards.forEach(function(card) {
+            let visibleCount = 0;
 
-                // Get vehicle name
-                const vehicleName = card.querySelector("h3")
-                    .textContent.toLowerCase();
+            vehicleCards.forEach(function (card) {
+                const name = card.getAttribute("data-name") || "";
+                const type = card.getAttribute("data-type") || "";
+                const status = card.getAttribute("data-status") || "";
 
-                // Get vehicle type
-                const typeText = card.querySelector("p")
-                    .textContent.replace("Type:", "")
-                    .trim()
-                    .toLowerCase();
+                const matchesSearch = name.includes(searchValue);
+                const matchesType = selectedType === "all" || type === selectedType;
+                const matchesAvailability = selectedAvailability === "all" || status === selectedAvailability;
 
-                // Get vehicle availability
-                const statusElement = card.querySelector(
-                    ".status-available, .status-rented"
-                );
-
-                const statusText = statusElement.textContent
-                    .trim()
-                    .toLowerCase();
-
-                // Search by vehicle name
-                const matchesSearch = vehicleName.includes(searchValue);
-
-                // Filter by vehicle type
-                const matchesType =
-                    selectedType === "all" ||
-                    typeText === selectedType;
-
-                // Filter by availability
-                const matchesAvailability =
-                    selectedAvailability === "all" ||
-                    statusText === selectedAvailability;
-
-                // Display matching vehicle cards
-                if (
-                    matchesSearch &&
-                    matchesType &&
-                    matchesAvailability
-                ) {
+                if (matchesSearch && matchesType && matchesAvailability) {
                     card.style.display = "";
+                    visibleCount++;
                 } else {
                     card.style.display = "none";
                 }
-
             });
 
+            vehicleCount.textContent = "Showing " + visibleCount + " vehicle" + (visibleCount === 1 ? "" : "s");
+
+            if (visibleCount === 0) {
+                noResults.classList.add("visible");
+            } else {
+                noResults.classList.remove("visible");
+            }
         }
 
-        // Search event
         searchInput.addEventListener("input", filterVehicles);
-
-        // Vehicle type filter event
         vehicleType.addEventListener("change", filterVehicles);
-
-        // Availability filter event
         availability.addEventListener("change", filterVehicles);
-
     </script>
-
 </body>
 </html>
-
-

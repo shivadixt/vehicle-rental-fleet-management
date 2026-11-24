@@ -2,57 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book a Vehicle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Vehicle - VRFMS</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/booking.css">
 </head>
 <body>
+    <div class="whole">
+        <nav class="navbar">
+            <div class="logo">VRFMS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vehicles.html">Vehicles</a></li>
+                <li><a href="booking.html" class="active">Book Now</a></li>
+                <li><a href="fleet.html">Fleet Management</a></li>
+            </ul>
+        </nav>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">VRFMS</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vehicles.html">Vehicles</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-            <li><a href="fleet.html">Fleet Management</a></li>
-        </ul>
-    </nav>
+        <div class="container">
+            <div class="page-header">
+                <h1>Book a Vehicle</h1>
+                <p>Reserve your preferred vehicle with instantaneous rate estimation.</p>
+            </div>
 
-    <div class="container">
-        <h1>Book a Vehicle</h1>
-        <p>Fill this form to request a booking. Right now it does not save anywhere, this will be connected to the backend later.</p>
+            <div id="bookingContainer" class="booking-layout">
+                <div class="booking-card">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                        </div>
 
-        <form class="booking-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" required>
+                            <span id="phoneError" class="form-error">Please enter a valid 10-digit phone number.</span>
+                        </div>
 
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+                        <div class="form-group">
+                            <label for="vehicle">Select Vehicle</label>
+                            <select id="vehicle" name="vehicle">
+                                <option value="swift" data-name="Maruti Swift" data-type="Car" data-price="1200">Maruti Swift - Car (Rs. 1,200/day)</option>
+                                <option value="creta" data-name="Hyundai Creta" data-type="SUV" data-price="2200">Hyundai Creta - SUV (Rs. 2,200/day)</option>
+                                <option value="re-classic" data-name="Royal Enfield Classic" data-type="Bike" data-price="700">Royal Enfield Classic - Bike (Rs. 700/day)</option>
+                                <option value="bolero" data-name="Mahindra Bolero" data-type="Van" data-price="1800">Mahindra Bolero - Van (Rs. 1,800/day)</option>
+                            </select>
+                        </div>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-date">Pickup Date</label>
+                                <input type="date" id="pickup-date" name="pickup-date" required>
+                            </div>
 
-            <label for="vehicle">Select Vehicle</label>
-            <select id="vehicle" name="vehicle">
-                <option value="swift">Maruti Swift - Car</option>
-                <option value="creta">Hyundai Creta - SUV</option>
-                <option value="re-classic">Royal Enfield Classic - Bike</option>
-                <option value="bolero">Mahindra Bolero - Van</option>
-            </select>
+                            <div class="form-group">
+                                <label for="return-date">Return Date</label>
+                                <input type="date" id="return-date" name="return-date" required>
+                            </div>
+                        </div>
+                        <span id="dateError" class="form-error">Return date must be on or after pickup date.</span>
 
-            <label for="pickup-date">Pickup Date</label>
-            <input type="date" id="pickup-date" name="pickup-date" required>
+                        <button type="submit" id="submitBookingBtn" class="btn">Confirm Booking</button>
+                    </form>
+                </div>
 
-            <label for="return-date">Return Date</label>
-            <input type="date" id="return-date" name="return-date" required>
+                <div class="booking-summary-card">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-item">
+                        <span>Selected Vehicle</span>
+                        <span id="summaryVehicle">Maruti Swift</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Vehicle Category</span>
+                        <span id="summaryType">Car</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Daily Rate</span>
+                        <span id="summaryDailyRate">Rs. 1,200</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Rental Duration</span>
+                        <span id="summaryDays">1 Day</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Estimated Total</span>
+                        <span id="summaryTotal" class="total-amount">Rs. 1,200</span>
+                    </div>
+                </div>
+            </div>
 
-            <button type="submit">Confirm Booking</button>
+            <div id="confirmationCard" class="confirmation-card">
+                <div class="confirmation-header">
+                    <h2>Booking Confirmed</h2>
+                    <p>Your vehicle reservation request has been registered successfully.</p>
+                </div>
+                <div class="confirmation-details">
+                    <div class="confirmation-row">
+                        <span>Booking Reference</span>
+                        <span id="confirmId">BK-1001</span>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Customer Name</span>
+                        <span id="confirmName"></span>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Contact Number</span>
+                        <span id="confirmPhone"></span>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Vehicle</span>
+                        <span id="confirmVehicle"></span>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Rental Period</span>
+                        <span id="confirmDates"></span>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Total Estimated Rent</span>
+                        <span id="confirmTotal"></span>
+                    </div>
+                </div>
+                <button type="button" id="bookAgainBtn" class="btn btn-secondary">Make Another Booking</button>
+            </div>
+        </div>
 
-        </form>
+        <footer class="footer">
+            <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
+        </footer>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
-    </footer>
-
+    <script src="js/booking.js"></script>
 </body>
 </html>

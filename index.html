@@ -7,80 +7,194 @@
     <title>Vehicle Rental and Fleet Management System</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
-    <!-- Script at bottom of body so DOM loads first -->
 </head>
 
 <body>
     <div class="whole">
-        <!-- Navbar -->
         <nav class="navbar">
             <div class="logo">VRFMS</div>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="vehicles.html">Vehicles</a></li>
                 <li><a href="booking.html">Book Now</a></li>
                 <li><a href="fleet.html">Fleet Management</a></li>
             </ul>
         </nav>
 
-        <!-- Hero Section -->
         <section class="hero">
-            <h1>Vehicle Rental and Fleet Management System</h1>
-            <p>Rent a vehicle in a few clicks, or manage your fleet from one place.</p>
+            <div class="hero-badge">Reliable Vehicle Rentals</div>
+            <h1>Find and Rent the Right Vehicle for Every Road</h1>
+            <p>Choose from our quality fleet of cars, SUVs, bikes, and vans with transparent pricing and straightforward booking.</p>
 
-            <!-- Welcome Banner — replaces the old prompt/alert popups -->
-            <div class="welcome-banner">
-                <input type="text" id="name-input" placeholder="Enter your name" maxlength="30">
-                <button id="name-submit-btn" class="btn btn-secondary">Say Hello</button>
+            <div class="hero-actions">
+                <a href="vehicles.html" class="btn">Browse Available Vehicles</a>
+                <a href="booking.html" class="btn btn-secondary">Book a Vehicle</a>
             </div>
-            <p id="welcome-message" class="welcome-message"></p>
-
-            <a href="vehicles.html" class="btn">Browse Vehicles</a>
         </section>
 
-        <!-- Rent Calculator Section — replaces the old prompt/alert popups -->
+        <section class="stats-strip">
+            <div class="container stats-strip-inner">
+                <div class="strip-item">
+                    <span class="strip-value">4 Types</span>
+                    <span class="strip-label">Cars, SUVs, Bikes & Vans</span>
+                </div>
+                <div class="strip-divider"></div>
+                <div class="strip-item">
+                    <span class="strip-value">From Rs. 700</span>
+                    <span class="strip-label">Affordable Daily Rates</span>
+                </div>
+                <div class="strip-divider"></div>
+                <div class="strip-item">
+                    <span class="strip-value">Instant</span>
+                    <span class="strip-label">Online Booking Requests</span>
+                </div>
+                <div class="strip-divider"></div>
+                <div class="strip-item">
+                    <span class="strip-value">Verified Fleet</span>
+                    <span class="strip-label">Regularly Maintained</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Explore by Category</h2>
+                    <p>Find the vehicle that matches your travel needs.</p>
+                </div>
+
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="category-tag">City & Travel</span>
+                        <h3>Cars</h3>
+                        <p class="category-desc">Efficient and smooth driving for daily commutes and road trips.</p>
+                        <div class="category-meta">
+                            <span class="category-price">Starts Rs. 1,200/day</span>
+                            <a href="vehicles.html" class="category-link">View Cars &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <span class="category-tag">Space & Power</span>
+                        <h3>SUVs</h3>
+                        <p class="category-desc">Roomy cabins and robust performance for family trips and luggage.</p>
+                        <div class="category-meta">
+                            <span class="category-price">Starts Rs. 2,200/day</span>
+                            <a href="vehicles.html" class="category-link">View SUVs &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <span class="category-tag">Quick & Agile</span>
+                        <h3>Bikes</h3>
+                        <p class="category-desc">Cruise through traffic and enjoy the open road with great mileage.</p>
+                        <div class="category-meta">
+                            <span class="category-price">Starts Rs. 700/day</span>
+                            <a href="vehicles.html" class="category-link">View Bikes &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <span class="category-tag">Group Transport</span>
+                        <h3>Vans</h3>
+                        <p class="category-desc">Spacious seating capacity for team journeys and larger groups.</p>
+                        <div class="category-meta">
+                            <span class="category-price">Starts Rs. 1,800/day</span>
+                            <a href="vehicles.html" class="category-link">View Vans &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="calculator-section">
             <div class="container">
-                <h2>Quick Rent Calculator</h2>
-                <p class="calculator-subtitle">₹1,000 per day &nbsp;|&nbsp; ₹500 discount on 7+ days</p>
-
-                <div class="calculator-form">
-                    <input type="number" id="days-input" placeholder="Number of days" min="1">
-                    <button id="calculate-btn" class="btn">Calculate Rent</button>
+                <div class="section-title">
+                    <h2>Quick Rent Calculator</h2>
+                    <p>Standard rate: Rs. 1,000 per day. Enjoy an automatic Rs. 500 discount for 7 days or more.</p>
                 </div>
-                <p id="rent-result" class="rent-result"></p>
+
+                <div class="calculator-card">
+                    <div class="calculator-form">
+                        <input type="number" id="days-input" placeholder="Number of days" min="1">
+                        <button id="calculate-btn" class="btn">Calculate Rent</button>
+                    </div>
+                    <p id="rent-result" class="rent-result"></p>
+                </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <div class="container">
-            <h2>Why use our system?</h2>
-            <div class="features">
-                <div class="feature-box">
-                    <h3>🚗 Wide Range</h3>
-                    <p>Cars, bikes and vans available for rent.</p>
+        <section class="home-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It Works</h2>
+                    <p>Three straightforward steps to secure your rental vehicle.</p>
                 </div>
-                <div class="feature-box">
-                    <h3>📋 Easy Booking</h3>
-                    <p>Simple form to book a vehicle in minutes.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>📍 Fleet Tracking</h3>
-                    <p>Admin can track which vehicles are available or rented.</p>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Choose a Vehicle</h3>
+                        <p>Browse our catalog and pick the vehicle that fits your style and budget.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Select Dates</h3>
+                        <p>Enter your pickup and return dates with upfront estimated totals.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Confirm & Drive</h3>
+                        <p>Submit your reservation request and get ready for your trip.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Sticky Footer -->
+        <section class="home-section bg-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Our Fleet?</h2>
+                    <p>Everything you need for an easy and dependable rental experience.</p>
+                </div>
+
+                <div class="features">
+                    <div class="feature-box">
+                        <h3>Wide Vehicle Selection</h3>
+                        <p>From fuel-efficient compacts to rugged SUVs and utility vans, all inspected regularly.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Transparent Daily Rates</h3>
+                        <p>Clear pricing upfront with no surprise fees or complicated contract terms.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Central Fleet Control</h3>
+                        <p>Real-time vehicle availability tracking ensures seamless handover upon arrival.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Browse our available vehicles or submit a booking request in under two minutes.</p>
+                <div class="cta-actions">
+                    <a href="vehicles.html" class="btn">Explore Vehicles</a>
+                    <a href="booking.html" class="btn btn-secondary">Book Now</a>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
-            <p>&copy; 2026 Vehicle Rental and Fleet Management System.</p>
+            <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
         </footer>
     </div>
 
-    <!-- Scroll-to-top button -->
-    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to top">↑</button>
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to top">&uarr;</button>
 
-    <!-- JS at the end so the DOM is ready when the script runs -->
     <script src="js/home.js"></script>
 </body>
 

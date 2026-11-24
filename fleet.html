@@ -2,85 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fleet Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Management - VRFMS</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/fleet.css">
 </head>
 <body>
+    <div class="whole">
+        <nav class="navbar">
+            <div class="logo">VRFMS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vehicles.html">Vehicles</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="fleet.html" class="active">Fleet Management</a></li>
+            </ul>
+        </nav>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">VRFMS</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vehicles.html">Vehicles</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-            <li><a href="fleet.html">Fleet Management</a></li>
-        </ul>
-    </nav>
+        <div class="container">
+            <div class="page-header">
+                <h1>Fleet Management</h1>
+                <p>Monitor vehicle inventory, review rental statuses, and register new vehicles.</p>
+            </div>
 
-    <div class="container">
-        <h1>Fleet Management (Admin)</h1>
-        <p>This page is for the admin to see and manage all vehicles in the fleet.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Fleet</span>
+                    <span id="statTotal" class="stat-value">4</span>
+                </div>
+                <div class="stat-card stat-available">
+                    <span class="stat-label">Available Vehicles</span>
+                    <span id="statAvailable" class="stat-value">3</span>
+                </div>
+                <div class="stat-card stat-rented">
+                    <span class="stat-label">Rented Out</span>
+                    <span id="statRented" class="stat-value">1</span>
+                </div>
+            </div>
 
-        <table class="fleet-table">
-            <tr>
-                <th>Vehicle ID</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Price / Day</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td>V001</td>
-                <td>Maruti Swift</td>
-                <td>Car</td>
-                <td>Rs. 1200</td>
-                <td class="status-available">Available</td>
-            </tr>
-            <tr>
-                <td>V002</td>
-                <td>Hyundai Creta</td>
-                <td>SUV</td>
-                <td>Rs. 2200</td>
-                <td class="status-rented">Rented</td>
-            </tr>
-            <tr>
-                <td>V003</td>
-                <td>Royal Enfield Classic</td>
-                <td>Bike</td>
-                <td>Rs. 700</td>
-                <td class="status-available">Available</td>
-            </tr>
-            <tr>
-                <td>V004</td>
-                <td>Mahindra Bolero</td>
-                <td>Van</td>
-                <td>Rs. 1800</td>
-                <td class="status-available">Available</td>
-            </tr>
-        </table>
+            <div class="fleet-section">
+                <div class="fleet-section-header">
+                    <h2>Fleet Inventory</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table class="fleet-table">
+                        <thead>
+                            <tr>
+                                <th>Vehicle ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Price / Day</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fleetTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-        <div class="add-vehicle-form">
-            <h2>Add New Vehicle</h2>
-            <form action="#" method="post">
-                <label for="v-name">Vehicle Name</label>
-                <input type="text" id="v-name" name="v-name" placeholder="e.g. Toyota Innova"><br><br>
+            <div class="add-vehicle-card">
+                <h2>Add New Vehicle</h2>
+                <form id="addVehicleForm" class="add-vehicle-form">
+                    <div class="form-field">
+                        <label for="v-name">Vehicle Name</label>
+                        <input type="text" id="v-name" name="v-name" placeholder="e.g. Toyota Innova Crysta" required>
+                    </div>
 
-                <label for="v-type">Type</label>
-                <input type="text" id="v-type" name="v-type" placeholder="e.g. Car / Bike / Van"><br><br>
+                    <div class="form-field">
+                        <label for="v-type">Type</label>
+                        <select id="v-type" name="v-type" required>
+                            <option value="Car">Car</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Van">Van</option>
+                        </select>
+                    </div>
 
-                <label for="v-price">Price per Day</label>
-                <input type="number" id="v-price" name="v-price" placeholder="e.g. 1500"><br><br>
+                    <div class="form-field">
+                        <label for="v-price">Price per Day (Rs.)</label>
+                        <input type="number" id="v-price" name="v-price" placeholder="e.g. 2500" min="100" required>
+                    </div>
 
-                <button type="submit">Add Vehicle</button>
-            </form>
+                    <button type="submit" id="addVehicleBtn" class="btn">Add Vehicle</button>
+                </form>
+                <div id="fleetFeedback" class="fleet-feedback">Vehicle added successfully.</div>
+            </div>
         </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
+        </footer>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Vehicle Rental and Fleet Management System. College Project.</p>
-    </footer>
-
+    <script src="js/fleet.js"></script>
 </body>
 </html>

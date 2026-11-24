@@ -1,210 +1,390 @@
-/* ===================================================
-   home.css  –  Styles specific to the Home Page
-   =================================================== */
-
-
-/* ---------- Hero Section ---------- */
 .hero {
-    background-color: #eef3f7;
-    border-bottom: 1px solid #e1e7ec;
+    background: linear-gradient(180deg, #edf2f7 0%, #f8fafc 100%);
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
-    padding: 50px 20px 40px;
+    padding: 60px 20px 48px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    font-size: 26px;
-    color: #1e3a5f;
-    margin-bottom: 8px;
+    font-size: 34px;
+    color: var(--primary);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero p {
-    font-size: 15px;
-    color: #555555;
-    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 26px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
-
-/* ---------- Welcome Banner (replaces popup) ---------- */
-.welcome-banner {
+.hero-actions {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
-.welcome-banner input {
-    padding: 9px 14px;
-    font-size: 14px;
-    border: 1px solid #c8d1da;
-    border-radius: 4px;
-    outline: none;
-    width: 220px;
-    transition: border-color 0.2s;
-}
-
-.welcome-banner input:focus {
-    border-color: #1e3a5f;
-}
-
-/* Secondary button style (lighter look) */
-.btn-secondary {
+.stats-strip {
     background-color: #ffffff;
-    color: #1e3a5f;
-    border: 1px solid #1e3a5f;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
 }
 
-.btn-secondary:hover {
-    background-color: #1e3a5f;
-    color: #ffffff;
+.stats-strip-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/* Welcome message text */
-.welcome-message {
+.strip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.strip-value {
     font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.strip-label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.strip-divider {
+    width: 1px;
+    height: 36px;
+    background-color: var(--border-color);
+}
+
+@media (max-width: 680px) {
+    .strip-divider {
+        display: none;
+    }
+}
+
+.home-section {
+    padding: 48px 0;
+}
+
+.home-section.bg-alt {
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 36px;
+}
+
+.section-title h2 {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: #cbd5e1;
+}
+
+.category-tag {
+    font-size: 11px;
     font-weight: 600;
-    color: #1e3a5f;
-    min-height: 28px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.category-card h3 {
+    font-size: 19px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.category-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
     margin-bottom: 18px;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    flex: 1;
 }
 
-.welcome-message.visible {
-    opacity: 1;
-    transform: translateY(0);
+.category-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
 }
 
+.category-price {
+    font-weight: 700;
+    color: var(--primary);
+}
 
-/* ---------- Rent Calculator Section ---------- */
+.category-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-link:hover {
+    text-decoration: underline;
+}
+
 .calculator-section {
     background-color: #ffffff;
-    border-bottom: 1px solid #e1e7ec;
-    padding: 36px 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 48px 0;
 }
 
-.calculator-subtitle {
-    text-align: center;
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 20px;
+.calculator-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
 }
 
 .calculator-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .calculator-form input {
-    padding: 9px 14px;
-    font-size: 14px;
-    border: 1px solid #c8d1da;
-    border-radius: 4px;
-    outline: none;
-    width: 180px;
-    transition: border-color 0.2s;
+    width: 200px;
 }
 
-.calculator-form input:focus {
-    border-color: #1e3a5f;
-}
-
-/* Result text (shown after calculation) */
 .rent-result {
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     min-height: 24px;
     margin-top: 16px;
-    padding: 10px;
-    border-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    display: none;
 }
 
 .rent-result.visible {
-    opacity: 1;
+    display: block;
 }
 
 .rent-result.success {
-    color: #166534;
-    background-color: #dcfce7;
+    color: var(--success);
+    background-color: var(--success-bg);
     border: 1px solid #bbf7d0;
 }
 
 .rent-result.error {
-    color: #991b1b;
-    background-color: #fee2e2;
+    color: var(--danger);
+    background-color: var(--danger-bg);
     border: 1px solid #fecaca;
 }
 
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
 
-/* ---------- Features Section ---------- */
-.container h2 {
-    font-size: 20px;
-    color: #222222;
+.step-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 26px 20px;
     text-align: center;
-    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background-color: var(--primary-light);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+}
+
+.step-card h3 {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
+    gap: 20px;
 }
 
 .feature-box {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 20px;
-    /* Start invisible for the entrance animation */
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
-}
-
-/* Class added by JS for staggered entrance */
-.feature-box.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.feature-box:hover {
-    border-color: #94a3b8;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-box h3 {
-    font-size: 16px;
-    color: #1e3a5f;
+    font-size: 17px;
+    color: var(--primary);
     margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .feature-box p {
     font-size: 13.5px;
-    color: #666666;
-    line-height: 1.5;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
+.cta-banner {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 56px 20px;
+    text-align: center;
+}
 
-/* ---------- Scroll-to-Top Button ---------- */
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.cta-banner h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.cta-banner p {
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 22px;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.cta-banner .btn {
+    background-color: #ffffff;
+    color: var(--primary);
+}
+
+.cta-banner .btn:hover {
+    background-color: #f1f5f9;
+}
+
+.cta-banner .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cta-banner .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
 .scroll-top-btn {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.2s ease;
     z-index: 100;
+    border: none;
+    box-shadow: var(--shadow-md);
+    background-color: var(--primary);
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .scroll-top-btn.visible {
