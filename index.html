@@ -7,7 +7,7 @@
     <title>Vehicle Rental and Fleet Management System</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
-    <script src="js/home.js"></script>
+    <!-- Script at bottom of body so DOM loads first -->
 </head>
 
 <body>
@@ -27,8 +27,29 @@
         <section class="hero">
             <h1>Vehicle Rental and Fleet Management System</h1>
             <p>Rent a vehicle in a few clicks, or manage your fleet from one place.</p>
+
+            <!-- Welcome Banner — replaces the old prompt/alert popups -->
+            <div class="welcome-banner">
+                <input type="text" id="name-input" placeholder="Enter your name" maxlength="30">
+                <button id="name-submit-btn" class="btn btn-secondary">Say Hello</button>
+            </div>
+            <p id="welcome-message" class="welcome-message"></p>
+
             <a href="vehicles.html" class="btn">Browse Vehicles</a>
-            <button class="btn" onclick="calculateRent()">Calculate Rent</button>
+        </section>
+
+        <!-- Rent Calculator Section — replaces the old prompt/alert popups -->
+        <section class="calculator-section">
+            <div class="container">
+                <h2>Quick Rent Calculator</h2>
+                <p class="calculator-subtitle">₹1,000 per day &nbsp;|&nbsp; ₹500 discount on 7+ days</p>
+
+                <div class="calculator-form">
+                    <input type="number" id="days-input" placeholder="Number of days" min="1">
+                    <button id="calculate-btn" class="btn">Calculate Rent</button>
+                </div>
+                <p id="rent-result" class="rent-result"></p>
+            </div>
         </section>
 
         <!-- Features Section -->
@@ -36,15 +57,15 @@
             <h2>Why use our system?</h2>
             <div class="features">
                 <div class="feature-box">
-                    <h3>Wide Range</h3>
+                    <h3>🚗 Wide Range</h3>
                     <p>Cars, bikes and vans available for rent.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>Easy Booking</h3>
+                    <h3>📋 Easy Booking</h3>
                     <p>Simple form to book a vehicle in minutes.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>Fleet Tracking</h3>
+                    <h3>📍 Fleet Tracking</h3>
                     <p>Admin can track which vehicles are available or rented.</p>
                 </div>
             </div>
@@ -55,6 +76,12 @@
             <p>&copy; 2026 Vehicle Rental and Fleet Management System.</p>
         </footer>
     </div>
+
+    <!-- Scroll-to-top button -->
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to top">↑</button>
+
+    <!-- JS at the end so the DOM is ready when the script runs -->
+    <script src="js/home.js"></script>
 </body>
 
 </html>

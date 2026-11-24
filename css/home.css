@@ -1,9 +1,14 @@
-/* Home Page  */
+/* ===================================================
+   home.css  –  Styles specific to the Home Page
+   =================================================== */
+
+
+/* ---------- Hero Section ---------- */
 .hero {
     background-color: #eef3f7;
     border-bottom: 1px solid #e1e7ec;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 20px 40px;
 }
 
 .hero h1 {
@@ -18,7 +23,128 @@
     margin-bottom: 20px;
 }
 
-/* Features Section */
+
+/* ---------- Welcome Banner (replaces popup) ---------- */
+.welcome-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.welcome-banner input {
+    padding: 9px 14px;
+    font-size: 14px;
+    border: 1px solid #c8d1da;
+    border-radius: 4px;
+    outline: none;
+    width: 220px;
+    transition: border-color 0.2s;
+}
+
+.welcome-banner input:focus {
+    border-color: #1e3a5f;
+}
+
+/* Secondary button style (lighter look) */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #1e3a5f;
+    border: 1px solid #1e3a5f;
+}
+
+.btn-secondary:hover {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+/* Welcome message text */
+.welcome-message {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e3a5f;
+    min-height: 28px;
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.welcome-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- Rent Calculator Section ---------- */
+.calculator-section {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e7ec;
+    padding: 36px 20px;
+}
+
+.calculator-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.calculator-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.calculator-form input {
+    padding: 9px 14px;
+    font-size: 14px;
+    border: 1px solid #c8d1da;
+    border-radius: 4px;
+    outline: none;
+    width: 180px;
+    transition: border-color 0.2s;
+}
+
+.calculator-form input:focus {
+    border-color: #1e3a5f;
+}
+
+/* Result text (shown after calculation) */
+.rent-result {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 24px;
+    margin-top: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rent-result.visible {
+    opacity: 1;
+}
+
+.rent-result.success {
+    color: #166534;
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+.rent-result.error {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+
+/* ---------- Features Section ---------- */
 .container h2 {
     font-size: 20px;
     color: #222222;
@@ -37,10 +163,20 @@
     border: 1px solid #e2e8f0;
     border-radius: 6px;
     padding: 20px;
+    /* Start invisible for the entrance animation */
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+}
+
+/* Class added by JS for staggered entrance */
+.feature-box.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .feature-box:hover {
-    border-color:#94a3b8;
+    border-color: #94a3b8;
 }
 
 .feature-box h3 {
@@ -55,3 +191,23 @@
     line-height: 1.5;
 }
 
+
+/* ---------- Scroll-to-Top Button ---------- */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
